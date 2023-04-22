@@ -1,3 +1,6 @@
+import requests
+import json
+import math
 import os
 
 print("Calling the OpenWeather API")
