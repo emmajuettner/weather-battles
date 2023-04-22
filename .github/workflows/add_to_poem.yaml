@@ -5,22 +5,13 @@ on:
     - cron: "0 * * * *"    #run every hour on the hour, every day
 
 jobs:
-  build:
+  add_to_poem:
+    name : Add to Poem
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo content
+      - name: checkout repo
         uses: actions/checkout@v2 # checkout the repository content to github runner.
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 #install python
-          - name: Install dependencies
-          run: |
-            python -m pip install --upgrade pip
-            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          ref: # branch
-            main
-      - name: execute py script # run file
-        run: |
-          python add_to_poem.py
+      - name: run py script
+        run: python ${{ env.DEVOPS_DIR }}/add_to_poem.py
+        shell: sh
