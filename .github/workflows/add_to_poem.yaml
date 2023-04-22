@@ -2,7 +2,8 @@ name: add_to_poem
 
 on:
   schedule:
-    - cron: "0 * * * *"    #run every hour on the hour, every day
+    - cron: "0 * * * *"    # run every hour on the hour, every day
+  workflow_dispatch:       # allow running manually
 
 jobs:
   add_to_poem:
