@@ -2,6 +2,8 @@ import requests
 import json
 import math
 import os
+from pathlib import Path
+from jinja2 import FileSystemLoader, Environment
 
 print("Calling the OpenWeather API")
 
@@ -24,6 +26,10 @@ print("weather="+weather)
 print("dt="+dt)
 
 # Build an html file based on the output we've generated
+loader = FileSystemLoader(".")
+env = Environment(
+    loader=loader, extensions=["jinja2_humanize_extension.HumanizeExtension"]
+)
 template = env.get_template("index.jinja")
 Path("index.html").write_text(
     template.render(
