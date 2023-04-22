@@ -27,7 +27,7 @@ print("New line is: " + newLine)
 
 # Add the new poem line to the existing poem lines from the repo
 prevPoemLines = Path('poem_lines.txt').read_text()
-poem = prevPoemLines + "\n" + newLine
+poem = prevPoemLines + "<br>" + newLine
 Path("poem_lines.txt").write_text(poem)
 print("Updated poem_lines.txt")
 
