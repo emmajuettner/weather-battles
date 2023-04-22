@@ -1,3 +1,5 @@
+import os
+
 print("Calling the OpenWeather API")
 
 # Constants
