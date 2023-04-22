@@ -20,7 +20,7 @@ print(data)
 
 # Pull out the specific weather stats we want to use
 weather = data["weather"][0]["main"]
-dt = data["dt"]
+dt = str(data["dt"])
 
 print("weather="+weather)
 print("dt="+dt)
