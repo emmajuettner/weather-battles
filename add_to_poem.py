@@ -18,12 +18,45 @@ print("Response from the OpenWeather API:")
 print(data)
 
 # Pull out the specific weather stats we want to use
-weather = data["weather"][0]["main"]
-print("weather="+weather)
+temp = data["main"]["temp"]
+print("temp="+str(temp))
+windSpeed = data["wind"]["speed"]
+print("windSpeed="+str(windSpeed))
+windDir = data["wind"]["deg"]
+print("windDir="+str(windDir))
 
-# Construct the new poem line
-newLine = weather
+# Load the existing stats
+statsStr = Path('stats.json').read_text()
+stats = json.loads(statsStr)
+balance = stats["balance"]
+mood = stats["mood"]
+
+# Generate poem text based on stats and weather params
+newLine = ""
+if temp > stats["temp"]:
+    mood += 1
+    newLine += "you get angrier, "
+else:
+    mood -= 1
+    newLine += "you get calmer, "
+if windDir > 180:
+    balance += 1
+    newLine += "you advance, "
+else:
+    balance -= 1
+    newLine += "your opponent advances, "
+if balance > 0:
+    newLine += "you are winning, "
+else:
+    newLine += "your opponent is winning, "
+
 print("New line is: " + newLine)
+
+# Update the stats file with the new stats
+stats["balance"] = balance
+stats["mood"] = mood
+stats["temp"] = temp
+Path("stats.json").write_text(json.dumps(stats))
 
 # Add the new poem line to the existing poem lines from the repo
 prevPoemLines = Path('poem_lines.txt').read_text()
