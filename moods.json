@@ -1,0 +1,14 @@
+{
+"very_sad" : ["devastated", "desolate","grieving","heartbroken","miserable","morose"],
+"sad" : ["hopeless", "disheartened", "dismayed","somber","resigned","gloomy","heavy-hearted","melancholic","regretful"],
+"afraid" : ["desperate", "fearful","defensive","frantic","jumpy","nervous","petrified","shaken","terrified","trembling"],
+"uncertain" : ["doubtful","apprehensive","edgy","flustered","hesitant","self-conscious","tense","wary"],
+"tired" : ["exhausted","fatigued","groggy","weary"],
+"calm" : ["contemplative","clear-headed","aloof","detached","dignified","resolute","determined","guarded","reserved","serious","solemn","tranquil"],
+"grim" : ["brooding","merciless","moody","reluctant","sheepish","sullen"],
+"energetic" : ["invigorated", "alert","restless"],
+"confident" : ["disdainful","contemptuous","fearless","haughty","self-assured","stubborn"]
+"eager" : ["eager","earnest","exhilarated","exuberant","hopeful","impatient","jubilant","zealous"],
+"angry" : ["defiant","indignant","resentful"],
+"very_angry" : ["furious","enraged","incensed","infuriated","irate","vengeful","vicious"]
+}
