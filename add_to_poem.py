@@ -9,7 +9,7 @@ from jinja2 import FileSystemLoader, Environment
 OPEN_WEATHER_API_KEY = os.environ['OPEN_WEATHER_API_KEY']
 LATITUDE = "41.890790"
 LONGITUDE = "-87.581239"
-OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s" % (LATITUDE, LONGITUDE, OPEN_WEATHER_API_KEY)
+OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (LATITUDE, LONGITUDE, OPEN_WEATHER_API_KEY)
 
 # Call OpenWeather API
 response = requests.get(OPEN_WEATHER_URL)
