@@ -1,6 +1,7 @@
 import requests
 import json
 import math
+import random
 import os
 from pathlib import Path
 from jinja2 import FileSystemLoader, Environment
@@ -31,14 +32,20 @@ stats = json.loads(statsStr)
 balance = stats["balance"]
 mood = stats["mood"]
 
+# Load the word files
+moodsStr = Path("moods.json").read_text()
+moods = json.loads(moodsStr)
+
 # Generate poem text based on stats and weather params
 newLine = ""
 if temp > stats["temp"]:
     mood += 1
     newLine += "you get angrier, "
+    newLine += moods["very_angry"][random.randint(0, len(moods["very_angry"]))]+", "
 else:
     mood -= 1
     newLine += "you get calmer, "
+    newLine += moods["calm"][random.randint(0, len(moods["calm"]))]+", "
 if windDir > 180:
     balance += 1
     newLine += "you advance, "
