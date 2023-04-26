@@ -1,6 +1,6 @@
 {
-  "narrator_advances" : ["you slash at your opponent", "you dodge a brutal blow","you lunge","you parry"],
-  "opponent_advances" : ["your opponent slashes at you", "your opponent dodges your blade","your opponent lunges","your opponent parries"],
-  "mood_calms" : ["you breathe deeply","you pause","you ease backwards","you circle each other","a brief moment of silence hangs between you"],
-  "mood_intensifies" : ["your breathing becomes ragged","your opponent glares at you", "you summon all your strength for an attack","your blood boils"]
+  "narrator_advances" : ["I slash at you", "I dodge your blade","I lunge","I parry your thrust"],
+  "opponent_advances" : ["you slash at me", "you dodge my blade","you lunge","you parry my thrust"],
+  "mood_calms" : ["I breathe deeply","I pause","you pause","I ease backwards","we circle each other","a brief moment of silence hangs between us"],
+  "mood_intensifies" : ["my breathing becomes ragged","you glare at me", "I summon all my strength for an attack","my blood boils"]
 }
