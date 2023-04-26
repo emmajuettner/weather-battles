@@ -35,6 +35,8 @@ mood = stats["mood"]
 # Load the word files
 moodsStr = Path("moods.json").read_text()
 moods = json.loads(moodsStr)
+actionsStr = Path("actions.json").read_text()
+actions = json.loads(actionsStr)
 
 # Generate poem text based on stats and weather params
 newLine = ""
@@ -48,10 +50,10 @@ else:
     newLine += moods["calm"][random.randint(0, len(moods["calm"])-1)]+", "
 if windDir > 180:
     balance += 1
-    newLine += "you advance, "
+    newLine += actions["narrator_advances"][random.randint(0, len(actions["narrator_advances"])-1)+", "
 else:
     balance -= 1
-    newLine += "your opponent advances, "
+    newLine += actions["opponent_advances"][random.randint(0, len(actions["opponent_advances"])-1)+", "
 if balance > 0:
     newLine += "you are winning, "
 else:
