@@ -42,11 +42,11 @@ actions = json.loads(actionsStr)
 newLine = ""
 if temp > stats["temp"]:
     mood += 1
-    newLine += "you get angrier, "
+    newLine += actions["mood_intensifies"][random.randint(0, len(actions["mood_intensifies"])-1)+", "
     newLine += moods["very_angry"][random.randint(0, len(moods["very_angry"])-1)]+", "
 else:
     mood -= 1
-    newLine += "you get calmer, "
+    newLine += actions["mood_calms"][random.randint(0, len(actions["mood_calms"])-1)+", "
     newLine += moods["calm"][random.randint(0, len(moods["calm"])-1)]+", "
 if windDir > 180:
     balance += 1
@@ -56,8 +56,10 @@ else:
     newLine += actions["opponent_advances"][random.randint(0, len(actions["opponent_advances"])-1)+", "
 if balance > 0:
     newLine += "you are winning, "
-else:
+elif balance < 0:
     newLine += "your opponent is winning, "
+else:
+    newLine += "you are evenly matched"
 
 print("New line is: " + newLine)
 
