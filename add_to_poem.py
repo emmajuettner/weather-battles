@@ -55,9 +55,9 @@ else:
     balance -= 1
     newLine += actions["opponent_advances"][random.randint(0, len(actions["opponent_advances"])-1)]+", "
 if balance > 0:
-    newLine += "you are winning, "
+    newLine += "" # TODO insert something better here
 elif balance < 0:
-    newLine += "your opponent is winning, "
+    newLine += "" # TODO insert something better here
 else:
     newLine += "you are evenly matched"
 
