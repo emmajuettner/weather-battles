@@ -41,11 +41,11 @@ newLine = ""
 if temp > stats["temp"]:
     mood += 1
     newLine += "you get angrier, "
-    newLine += moods["very_angry"][random.randint(0, len(moods["very_angry"]))]+", "
+    newLine += moods["very_angry"][random.randint(0, len(moods["very_angry"])-1)]+", "
 else:
     mood -= 1
     newLine += "you get calmer, "
-    newLine += moods["calm"][random.randint(0, len(moods["calm"]))]+", "
+    newLine += moods["calm"][random.randint(0, len(moods["calm"])-1)]+", "
 if windDir > 180:
     balance += 1
     newLine += "you advance, "
