@@ -1,0 +1,4 @@
+{
+  "narrator_advances" : ["I slash at my opponent", "I dodge a brutal blow","I lunge","I parry"],
+  "opponent_advances" : ["my opponent slashes at me", "my opponent dodges my blade","my opponent lunges","my opponent parries"]
+}
